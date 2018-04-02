@@ -29,40 +29,47 @@ var article_three = {
                 three` 
 };
 
-var htmlTemplate = `
-    <html>
-    <head>
-        <title>${articleOne.title}</title>
-        <link href="/ui/style.css" rel="stylesheet" />
-    </head>
-    <body>
-        <div>
-            <h3>${articleOne.heading}</h3>
-        </div>
-        <div>
-            <p>${articleOne.date}</p>
-        </div>
-        <div>
-            <p>${articleOne.Content}</p>
-        </div>
-    </body>
-</html>
-`;
-
+function createTemplate (data)
+{
+    var title = data.title;
+    var heading = data.heading;
+    var date = data.date;
+    var Content = data.Content;
+    var htmlTemplate = `
+        <html>
+        <head>
+            <title>${title}</title>
+            <link href="/ui/style.css" rel="stylesheet" />
+        </head>
+        <body>
+            <div>
+                <h3>${heading}</h3>
+            </div>
+            <div>
+                <p>${date}</p>
+            </div>
+            <div>
+                <p>${Content}</p>
+            </div>
+        </body>
+    </html>
+`   ;
+    return htmlTemplate;
+}
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
 
 app.get('/index-one', function (req, res) {
-  res.send("Serving page 1");
+  res.send(createTemplate(article_one));
 });
 
 app.get('/index-two', function (req, res) {
-  res.send("Serving page 2");
+  res.send(createTemplate(article_two));
 });
 
 app.get('/index-three', function (req, res) {
-  res.send("Serving page 3");
+  res.send(createTemplate(article_three));
 });
 
 app.get('/ui/style.css', function (req, res) {
