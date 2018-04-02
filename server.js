@@ -29,6 +29,26 @@ var article_three = {
                 three` 
 };
 
+var htmlTemplate = `
+    <html>
+    <head>
+        <title>${articleOne.title}</title>
+        <link href="/ui/style.css" rel="stylesheet" />
+    </head>
+    <body>
+        <div>
+            <h3>${articleOne.heading}</h3>
+        </div>
+        <div>
+            <p>${articleOne.date}</p>
+        </div>
+        <div>
+            <p>${articleOne.Content}</p>
+        </div>
+    </body>
+</html>
+`;
+
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
