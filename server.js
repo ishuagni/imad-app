@@ -60,16 +60,8 @@ app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
 
-app.get('/index-one', function (req, res) {
-  res.send(createTemplate(article_one));
-});
-
-app.get('/index-two', function (req, res) {
-  res.send(createTemplate(article_two));
-});
-
-app.get('/index-three', function (req, res) {
-  res.send(createTemplate(article_three));
+app.get('/:article-name', function (req, res) {
+  res.send(createTemplate(article-name));
 });
 
 app.get('/ui/style.css', function (req, res) {
