@@ -18,10 +18,17 @@
             I'm a student of MBM engineering college
         </div>
         <hr/>
-        <div class="Footer">
-            <h3>Information</h3>
+        <div class="Footer center">
+            This button <button id="counter">Click Me!</button> clicked <span id="count">0</span> times           
         </div>
-        <script type="text/javascript" src="/ui/main.js">
+        <script>
+            var count = 0;
+            var counter = document.getElementById("counter");
+            var count = document.getElementById("count");
+            if(counter){
+                count += 1;
+                count.InnerHtml = count.toString();
+            }
         </script>
     </body>
 </html>
