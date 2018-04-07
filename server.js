@@ -1,9 +1,9 @@
 var express = require('express');
 var morgan = require('morgan');
 var path = require('path');
-var Pool = requires('pg-pool');
+const Pool = requires('pg-pool');
 
-var config = {
+const config = {
     username : 'ishuagnihotri20',
     database : 'ishuagnihotri20',
     host : 'db.imad.hasura-app.io',
@@ -65,7 +65,7 @@ function createTemplate (data)
     return htmlTemplate;
 }
 
-var pool = new Pool(config);
+const pool = new Pool(config);
 app.get('/db-test', function(req, res){
         pool.query('Select * from test;',function(err, result){
             if(err){
