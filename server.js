@@ -64,7 +64,7 @@ function createTemplate (data)
     `;
     return htmlTemplate;
 }
-/*
+
 var pool = new Pool(config);
 app.get('/db-test', function(req, res){
         pool.query('Select * from test;',function(err, result){
@@ -76,7 +76,7 @@ app.get('/db-test', function(req, res){
             }
         });
 });
-*/
+
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
