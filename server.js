@@ -1,7 +1,7 @@
 var express = require('express');
 var morgan = require('morgan');
 var path = require('path');
-const Pool = requires('pg-pool');
+//const Pool = requires('pg-pool');
 
 const config = {
     username : 'ishuagnihotri20',
@@ -65,7 +65,7 @@ function createTemplate (data)
     return htmlTemplate;
 }
 
-const pool = new Pool(config);
+/*const pool = new Pool(config);
 app.get('/db-test', function(req, res){
         pool.query('Select * from test;',function(err, result){
             if(err){
@@ -75,7 +75,7 @@ app.get('/db-test', function(req, res){
                 res.send(JSON.stringify(result));
             }
         });
-});
+});*/
 
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
