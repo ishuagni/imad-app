@@ -3,18 +3,18 @@ var morgan = require('morgan');
 var path = require('path');
 //const Pool = requires('pg-pool');
 
-const config = {
+/*const config = {
     username : 'ishuagnihotri20',
     database : 'ishuagnihotri20',
     host : 'db.imad.hasura-app.io',
     port : '5432',
     password : 'db-ishuagnihotri20-18556'
-};
+};*/
 
 var app = express();
 app.use(morgan('combined'));
 
-var counter = 0;
+//var counter = 0;
 
 var articles = {
     'article_one' : {
